@@ -1,5 +1,5 @@
 const express = require("express");
-const mysql = require("mysql");
+const mysql = require("mysql2");
 const cors = require("cors");
 const app = express();
 const port = 3000;
@@ -11,12 +11,15 @@ const path = require("path");
 
 app.use(cookieParser());
 app.use(express.json());
-app.use(cors({ origin: "http://localhost:5173", credentials: true }));
+app.use(
+  cors({ origin: "https://manish-todo-app-domain.com", credentials: true })
+);
 const db = mysql.createConnection({
-  user: "root",
-  host: "localhost",
-  password: "Manish@123",
-  database: "todoapp",
+  host: "sql.freedb.tech",
+  user: "freedb_manish",
+  password: "Ye!J!#qTtf6ZDdj",
+  database: "freedb_manish_todo",
+  port: 3306,
 });
 db.connect((err) => {
   if (err) throw err;
