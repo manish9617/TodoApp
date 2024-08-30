@@ -16,8 +16,8 @@ app.use(
 );
 const db = mysql.createConnection({
   host: "sql.freedb.tech",
-  user: "freedb_manish",
-  password: "Ye!J!#qTtf6ZDdj",
+  user: "freedb_rajput",
+  password: "3dw$%NzzDKS4ZCr",
   database: "freedb_manish_todo",
   port: 3306,
 });
