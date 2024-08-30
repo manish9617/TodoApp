@@ -14,7 +14,7 @@ const AllTask = () => {
 
   useEffect(() => {
     if (localStorage.getItem("token") != null) {
-      axios.get("http://localhost:3000/auth").then((res) => {
+      axios.get("https://todoapp-ho3m.onrender.com/auth").then((res) => {
         if (res.data.Status === "Success") {
           handleAuth();
         } else {
@@ -26,7 +26,7 @@ const AllTask = () => {
 
   useEffect(() => {
     if (auth) {
-      axios.get("http://localhost:3000/data").then((res) => {
+      axios.get("https://todoapp-ho3m.onrender.com/data").then((res) => {
         setData(res.data.tasks);
       });
     }
@@ -39,7 +39,10 @@ const AllTask = () => {
 
   const handleUpdate = () => {
     axios
-      .put(`http://localhost:3000/edit/${editingTaskId}`, updatedTask)
+      .put(
+        `https://todoapp-ho3m.onrender.com/edit/${editingTaskId}`,
+        updatedTask
+      )
       .then((res) => {
         if (res.data.Status === "Success") {
           toast.success("Task updated successfully");

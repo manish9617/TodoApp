@@ -13,7 +13,7 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(
   cors({
-    origin: "https://manish-todo-app-domain.com",
+    origin: "https://main--task-manager-022.netlify.app/",
     credentials: true,
   })
 );

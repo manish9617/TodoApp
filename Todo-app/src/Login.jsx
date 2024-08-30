@@ -19,7 +19,7 @@ export default function Login() {
       password: password.current.value,
     };
     axios
-      .post("http://localhost:3000/login", formData) // Update this URL
+      .post("https://todoapp-ho3m.onrender.com/login", formData) // Update this URL
       .then((res) => {
         console.log(res.data);
         if (res.data.Status === "Success") {

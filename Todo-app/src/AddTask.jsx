@@ -13,14 +13,16 @@ const AddTask = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle form submission logic here
-    axios.post("http://localhost:3000/addtask", formData).then((res) => {
-      if (res.data.Status === "Success") {
-        toast.success("Added successfully");
-        navigate("/");
-      } else {
-        toast.error(res.data.Error);
-      }
-    });
+    axios
+      .post("https://todoapp-ho3m.onrender.com/addtask", formData)
+      .then((res) => {
+        if (res.data.Status === "Success") {
+          toast.success("Added successfully");
+          navigate("/");
+        } else {
+          toast.error(res.data.Error);
+        }
+      });
   };
 
   const handleInputChange = (e) => {

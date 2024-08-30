@@ -12,11 +12,13 @@ const Register = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:3000/register", formData).then((res) => {
-      console.log(res.data);
-      if (res.data.Status === "Success") navigate("/login");
-      else alert(res.data.Error);
-    });
+    axios
+      .post("https://todoapp-ho3m.onrender.com/register", formData)
+      .then((res) => {
+        console.log(res.data);
+        if (res.data.Status === "Success") navigate("/login");
+        else alert(res.data.Error);
+      });
   };
 
   const handleInputChange = (e) => {

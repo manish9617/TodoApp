@@ -12,7 +12,7 @@ const DataProvider = ({ children }) => {
   };
 
   const handleLogout = () => {
-    axios.get("http://localhost:3000/logout").then((res) => {
+    axios.get("https://todoapp-ho3m.onrender.com/logout").then((res) => {
       localStorage.clear();
       location.reload(true);
     });
