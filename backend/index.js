@@ -12,14 +12,17 @@ const path = require("path");
 app.use(cookieParser());
 app.use(express.json());
 app.use(
-  cors({ origin: "https://manish-todo-app-domain.com", credentials: true })
+  cors({
+    origin: "https://manish-todo-app-domain.com",
+    credentials: true,
+  })
 );
 const db = mysql.createConnection({
-  host: "sql.freedb.tech",
-  user: "freedb_rajput",
-  password: "3dw$%NzzDKS4ZCr",
-  database: "freedb_manish_todo",
-  port: 3306,
+  host: "mysql-3f3639c7-mrajput961751-9444.h.aivencloud.com",
+  user: "avnadmin",
+  password: "AVNS_V1AG9plQfQFsqVogi5U",
+  database: "todoApp",
+  port: 11988,
 });
 db.connect((err) => {
   if (err) throw err;
@@ -127,12 +130,10 @@ app.post("/addtask", verifyUser, (req, res) => {
   const id = req.id;
   const task = req.body.task;
   const data = req.body.date;
-  console.log(id);
   const sql = "insert into task (taskName,taskDate  ,userId) values (?,?,?)";
   db.query(sql, [task, data, id], (err, result) => {
     console.log(err);
     if (err) return res.json({ Error: "Not added" });
-    console.log(result);
     return res.json({ Status: "Success" });
   });
 });
